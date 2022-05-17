@@ -47,7 +47,7 @@ def summary(nb = 4096, parallax_over_error = 8, parallax = 10, BP_RP_range = [0.
     text += "M_G_range = " + str(M_G_range) + ", "
     text += "time_step = " + str(time_step) + ", "
     text += "time = " + str(time) + ").value"	
-    '''
+    text += '''
     orbits_position = pickle.loads(result[0])
     orbits_velocity = pickle.loads(result[1])
     ```
