@@ -19,6 +19,8 @@ import gala.dynamics as gd
 import gala.potential as gp
 from gala.units import galactic
 
+import pickle
+
 _lock = RendererAgg.lock
 
 
@@ -132,7 +134,7 @@ def get_orbits(nb = 4096, parallax_over_error = 8, parallax = 10, BP_RP_range = 
     - time (float) : duration for orbits integration. Default = 500 Myr
 
     Returns:
-    - orbits object
+    - a tuple (orbit.pos, orbit.vel)
     '''
     gaia_data = query(nb, parallax_over_error, parallax)
     galcen, BP_RP, M_G = data_preparation(gaia_data)
@@ -148,7 +150,7 @@ def get_orbits(nb = 4096, parallax_over_error = 8, parallax = 10, BP_RP_range = 
 
     orbits = H.integrate_orbit(w0_hi, dt=time_step*u.Myr, t1=0*u.Myr, t2=time*u.Myr)
 
-    return orbits
+    return [orbits.pos, orbits.vel]
 
 def st_ui():
     st.set_page_config(layout = "wide")
