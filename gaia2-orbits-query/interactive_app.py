@@ -36,6 +36,7 @@ def summary(nb = 4096, parallax_over_error = 8, parallax = 10, BP_RP_range = [0.
     uses the High Mass stars definition range !):  
     ```python
     import pydaisi as pyd
+    import pickle
 
     orbits_query = pyd.Daisi("Gaia 2 Orbits Query")
     result = orbits_query.get_orbits(nb = '''
@@ -46,7 +47,10 @@ def summary(nb = 4096, parallax_over_error = 8, parallax = 10, BP_RP_range = [0.
     text += "M_G_range = " + str(M_G_range) + ", "
     text += "time_step = " + str(time_step) + ", "
     text += "time = " + str(time) + ").value"	
-    '''```
+    '''
+    orbits_position = pickle.loads(result[0])
+    orbits_velocity = pickle.loads(result[1])
+    ```
 
     '''
     return text
@@ -134,7 +138,8 @@ def get_orbits(nb = 4096, parallax_over_error = 8, parallax = 10, BP_RP_range = 
     - time (float) : duration for orbits integration. Default = 500 Myr
 
     Returns:
-    - a tuple (orbit.pos, orbit.vel)
+    - a tuple (pickle.dumps(orbits.pos), pickle.dumps(orbits.vel))
+    
     '''
     gaia_data = query(nb, parallax_over_error, parallax)
     galcen, BP_RP, M_G = data_preparation(gaia_data)
