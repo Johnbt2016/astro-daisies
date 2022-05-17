@@ -150,7 +150,7 @@ def get_orbits(nb = 4096, parallax_over_error = 8, parallax = 10, BP_RP_range = 
 
     orbits = H.integrate_orbit(w0_hi, dt=time_step*u.Myr, t1=0*u.Myr, t2=time*u.Myr)
 
-    return [orbits.pos, orbits.vel]
+    return orbits.pos, orbits.vel
 
 def st_ui():
     st.set_page_config(layout = "wide")
