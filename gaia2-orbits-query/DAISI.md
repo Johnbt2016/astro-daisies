@@ -1,4 +1,4 @@
-# Interactive 1D basin model
+# Computing Galactic Orbits of Stars with Gala
 
 Return orbits of stars with data from the Gaia mission.
 The query gets sky positions, distances (parallaxes), proper motions, and radial velocities 
