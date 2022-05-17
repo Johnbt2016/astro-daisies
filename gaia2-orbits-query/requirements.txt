@@ -1,0 +1,6 @@
+streamlit
+astropy
+astroquery
+matplotlib
+numpy
+astro-gala
