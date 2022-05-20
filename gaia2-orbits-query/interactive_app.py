@@ -23,7 +23,6 @@ import pickle
 
 _lock = RendererAgg.lock
 
-
 def summary(nb = 4096, parallax_over_error = 8, parallax = 10, BP_RP_range = [0.5, 0.7], M_G_range = [2.0, 3.75], time_step = 1., time = 500.):
     text = '''
     Return orbits of stars with data from the Gaia mission.
