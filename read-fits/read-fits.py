@@ -53,7 +53,7 @@ def return_hist(indices):
 
 def st_ui():
     st.title("Querying galaxies spectra")
-    st.subheader("From the HorizonAGN_LAIGLE-DAVIDZON+2019_SPECTRA_z2-4.fits catalog")
+    st.subheader("From the HorizonAGN_2019_SPECTRA_z2-4.fits catalog")
     g1 = int(st.sidebar.text_input("Galaxy 1 - Index (max = 359074)", 456))
     g2 = int(st.sidebar.text_input("Galaxy 2 - Index (max = 359074)", 67845))
 
