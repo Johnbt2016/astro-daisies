@@ -4,9 +4,7 @@ import matplotlib.pyplot as plt
 import streamlit as st
 from io import BytesIO
 from summary import *
-from PIL import Image
-image_data = ... # byte values of the image
-image = Image.open(io.BytesIO(image_data))
+
 
 image_file = "/pebble_tmp/models/quiescent-galaxy-colour-diagram/HorizonAGN.fits"
 # image_file = "../data/HorizonAGN.fits"
