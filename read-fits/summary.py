@@ -1,6 +1,6 @@
 def get_summary():
     text = '''
-    This Daisi query the **HorizonAGN_LAIGLE-DAVIDZON+2019_SPECTRA_z2-4.fits** catalog 
+    This Daisi queries the **HorizonAGN_LAIGLE-DAVIDZON+2019_SPECTRA_z2-4.fits** catalog 
     which contains spectra at 1132 wavelength steps from 506 to 1e+05 Angstroms,
     for all the galaxies in **HorizonAGN_LAIGLE-DAVIDZON+2019_COSMOS_v1.5.fits**.
 
