@@ -5,8 +5,8 @@ import streamlit as st
 from io import BytesIO
 from summary import *
 
-# image_file = "/pebble_tmp/models/quiescent-galaxy-colour-diagram/HorizonAGN.fits"
-image_file = "../data/HorizonAGN.fits"
+image_file = "/pebble_tmp/models/quiescent-galaxy-colour-diagram/HorizonAGN.fits"
+# image_file = "../data/HorizonAGN.fits"
 
 image_data = np.array(fits.getdata(image_file))
 
