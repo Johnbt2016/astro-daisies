@@ -5,26 +5,25 @@ import streamlit as st
 from io import BytesIO
 from summary import *
 
-image_file = "/pebble_tmp/models/quiescent-galaxy-colour-diagram/HorizonAGN.fits"
-# image_file = "../data/HorizonAGN.fits"
+# image_file = "/pebble_tmp/models/quiescent-galaxy-colour-diagram/HorizonAGN.fits"
+image_file = "../data/HorizonAGN.fits"
 
 image_data = np.array(fits.getdata(image_file))
 
 def spectra_hist(spectra):
-    fig, ax = plt.subplots()
+    fig= plt.figure()
     if len(spectra) > 1:
-        t = "Comparing spectra steps distribution for galaxies "
+        title = "Comparing spectra steps distribution for galaxies "
     else:
-        t = "Spectra steps distribution for galaxy "
+        title = "Spectra steps distribution for galaxy "
     nb = 0.
     for key, item in spectra.items():
         if item is not None:
-            ax.hist(item,bins = 50, alpha= 1. - nb/3, rwidth=1)
-            t += str(key) + ", "
+            plt.hist(item,bins = 50, alpha= 1. - nb/3, rwidth=1)
+            title += str(key) + ", "
             nb += 1
-    t = t.strip().strip(",")
-    ax.set_xlim(-5, 2)
-    ax.set_title(t)
+    title = title.strip().strip(",")
+    fig.suptitle(title, fontsize = 14 , fontweight = 'bold')
     return fig
 
 def return_spectra(galaxy_idx=0):
